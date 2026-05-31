@@ -7,16 +7,28 @@ $ErrorActionPreference = "Stop"
 $repo = Split-Path -Parent $MyInvocation.MyCommand.Path
 Set-Location $repo
 
-git -c safe.directory="$repo" fetch origin main
-git -c safe.directory="$repo" pull --rebase origin main
-git -c safe.directory="$repo" add index.html booth-3d-dashboard.html booth-3d-data.json README.md .nojekyll
+function Invoke-Git {
+  git -c safe.directory="$repo" @args
+  if ($LASTEXITCODE -ne 0) {
+    throw "Git command failed: git $($args -join ' ')"
+  }
+}
 
-$changes = git -c safe.directory="$repo" status --short
-if (-not $changes) {
+Invoke-Git add index.html booth-3d-dashboard.html booth-3d-data.json README.md .nojekyll publish-to-github.ps1
+
+$changes = Invoke-Git status --short
+if ($changes) {
+  Invoke-Git commit -m $Message
+}
+
+Invoke-Git fetch origin main
+Invoke-Git pull --rebase origin main
+
+$ahead = Invoke-Git rev-list --count origin/main..HEAD
+if ([int]$ahead -eq 0) {
   Write-Host "No dashboard changes to publish."
   exit 0
 }
 
-git -c safe.directory="$repo" commit -m $Message
-git -c safe.directory="$repo" push origin main
+Invoke-Git push origin main
 Write-Host "Published BOOTH 3D dashboard to GitHub Pages."
