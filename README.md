@@ -12,3 +12,5 @@
 
 毎週の調査では `booth-3d-data.json` を更新します。
 GitHub Pagesで公開している場合は、更新後にGitHubへ反映するとスマホから同じURLで確認できます。
+
+Publish check: GitHub Pages auto-publish path verified.
