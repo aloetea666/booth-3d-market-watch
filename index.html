@@ -1,0 +1,679 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BOOTH 3D衣装 市場ウォッチ</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #202124;
+      --muted: #666b73;
+      --line: #dde2e7;
+      --soft: #f6f8fa;
+      --paper: #ffffff;
+      --teal: #1b8a86;
+      --coral: #d85c45;
+      --violet: #6d5bd0;
+      --amber: #b7791f;
+      --green: #2e7d50;
+      --shadow: 0 10px 28px rgba(32, 33, 36, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #eef2f5;
+      color: var(--ink);
+      letter-spacing: 0;
+    }
+
+    .app {
+      max-width: 980px;
+      margin: 0 auto;
+      min-height: 100vh;
+      background: var(--paper);
+    }
+
+    header {
+      padding: 22px 18px 14px;
+      background:
+        linear-gradient(115deg, rgba(27, 138, 134, 0.16), transparent 48%),
+        linear-gradient(280deg, rgba(216, 92, 69, 0.14), transparent 52%),
+        #fbfcfd;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .kicker {
+      margin: 0 0 8px;
+      color: var(--teal);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(24px, 7vw, 42px);
+      line-height: 1.08;
+      font-weight: 800;
+    }
+
+    .lead {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .status-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .metric {
+      min-width: 0;
+      padding: 12px 10px;
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    .metric b {
+      display: block;
+      font-size: 20px;
+      line-height: 1.1;
+    }
+
+    .metric span {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.25;
+    }
+
+    .tabs {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+      padding: 10px 10px;
+      background: rgba(255, 255, 255, 0.94);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(10px);
+    }
+
+    .tab {
+      appearance: none;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      min-height: 38px;
+      background: transparent;
+      color: var(--muted);
+      font: inherit;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .tab[aria-selected="true"] {
+      background: #202124;
+      color: #fff;
+    }
+
+    main {
+      padding: 16px 14px 34px;
+    }
+
+    .panel {
+      display: none;
+    }
+
+    .panel.active {
+      display: block;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin: 8px 0 12px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 19px;
+      line-height: 1.25;
+    }
+
+    .date {
+      color: var(--muted);
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .summary-grid {
+      display: grid;
+      gap: 10px;
+    }
+
+    .insight {
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--paper);
+      box-shadow: var(--shadow);
+    }
+
+    .insight strong {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 15px;
+    }
+
+    .insight p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .accent-teal {
+      border-left: 5px solid var(--teal);
+    }
+
+    .accent-coral {
+      border-left: 5px solid var(--coral);
+    }
+
+    .accent-violet {
+      border-left: 5px solid var(--violet);
+    }
+
+    .product-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .product {
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      gap: 12px;
+      padding: 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .thumb {
+      position: relative;
+      min-width: 0;
+      aspect-ratio: 1;
+      border-radius: 7px;
+      overflow: hidden;
+      background: #e7ebef;
+    }
+
+    .thumb img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .rank-badge {
+      position: absolute;
+      top: 6px;
+      left: 6px;
+      padding: 4px 6px;
+      border-radius: 999px;
+      background: rgba(32, 33, 36, 0.82);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .product h3 {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.35;
+    }
+
+    .shop {
+      margin: 4px 0 8px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 9px;
+    }
+
+    .tag {
+      padding: 4px 7px;
+      border-radius: 999px;
+      background: var(--soft);
+      color: #4d535a;
+      font-size: 11px;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .product-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      font-size: 13px;
+    }
+
+    .price {
+      font-weight: 800;
+    }
+
+    .signal {
+      color: var(--green);
+      font-weight: 800;
+    }
+
+    .source-link {
+      color: var(--teal);
+      font-weight: 800;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .trend-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .trend {
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .trend-top {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 9px;
+    }
+
+    .trend-name {
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    .trend-score {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .bar {
+      height: 10px;
+      border-radius: 999px;
+      background: #e7ebef;
+      overflow: hidden;
+    }
+
+    .bar span {
+      display: block;
+      height: 100%;
+      width: var(--w);
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--c), #202124);
+    }
+
+    .trend-note {
+      margin: 9px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.55;
+    }
+
+    .surge-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .surge-report {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .surge-head {
+      display: grid;
+      grid-template-columns: 116px 1fr;
+      gap: 12px;
+      padding: 10px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .surge-head .thumb {
+      border-radius: 7px;
+    }
+
+    .surge-kpi {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .kpi {
+      padding: 5px 7px;
+      border-radius: 999px;
+      background: var(--soft);
+      color: #4d535a;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .kpi.hot {
+      background: rgba(216, 92, 69, 0.12);
+      color: var(--coral);
+    }
+
+    .report-body {
+      padding: 13px 14px 15px;
+    }
+
+    .report-body h4 {
+      margin: 0 0 6px;
+      font-size: 13px;
+    }
+
+    .report-body p {
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .report-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    .archive {
+      display: grid;
+      gap: 10px;
+    }
+
+    .week {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      align-items: center;
+      padding: 13px 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+
+    .week strong {
+      display: block;
+      font-size: 14px;
+    }
+
+    .week span {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .score-pill {
+      padding: 7px 9px;
+      border-radius: 999px;
+      background: rgba(109, 91, 208, 0.11);
+      color: var(--violet);
+      font-size: 12px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .memo-box {
+      margin-top: 16px;
+      padding: 14px;
+      border-radius: 8px;
+      background: #202124;
+      color: #fff;
+    }
+
+    .memo-box strong {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 14px;
+    }
+
+    .memo-box p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    @media (min-width: 720px) {
+      .app {
+        margin-top: 24px;
+        margin-bottom: 24px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      header {
+        padding: 34px 34px 24px;
+      }
+
+      main {
+        padding: 24px 28px 42px;
+      }
+
+      .summary-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .product-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .surge-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <header>
+      <p class="kicker">Weekly Market Watch / Prototype</p>
+      <h1>BOOTH 3D衣装 市場ウォッチ</h1>
+      <p class="lead">VRChat向け3D衣装の新着、価格帯、対応アバター、デザイン傾向を週次で見るための試作レポートです。</p>
+      <div id="metrics" class="status-row" aria-label="今週の集計"></div>
+    </header>
+
+    <nav class="tabs" aria-label="表示切替">
+      <button class="tab" type="button" aria-selected="true" data-panel="summary">要点</button>
+      <button class="tab" type="button" aria-selected="false" data-panel="products">商品</button>
+      <button class="tab" type="button" aria-selected="false" data-panel="trends">深掘り</button>
+      <button class="tab" type="button" aria-selected="false" data-panel="archive">履歴</button>
+    </nav>
+
+    <main>
+      <section id="summary" class="panel active">
+        <div class="section-title">
+          <h2>今週の要点</h2>
+          <span id="week-label" class="date"></span>
+        </div>
+        <div id="summary-list" class="summary-grid"></div>
+        <div class="memo-box">
+          <strong>次回制作メモ</strong>
+          <p id="production-memo"></p>
+        </div>
+      </section>
+
+      <section id="products" class="panel">
+        <div class="section-title">
+          <h2>注目商品</h2>
+          <span class="date">サムネ表示</span>
+        </div>
+        <div id="product-list" class="product-list"></div>
+      </section>
+
+      <section id="trends" class="panel">
+        <div class="section-title">
+          <h2>急上昇の深掘り</h2>
+          <span class="date">アクセス増</span>
+        </div>
+        <div id="surge-list" class="surge-list"></div>
+      </section>
+
+      <section id="archive" class="panel">
+        <div class="section-title">
+          <h2>週次アーカイブ</h2>
+          <span class="date">試作</span>
+        </div>
+        <div id="archive-list" class="archive"></div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const tabs = document.querySelectorAll(".tab");
+    const panels = document.querySelectorAll(".panel");
+    const fallbackData = {
+      reportDate: "2026/06/01",
+      weekLabel: "2026/06/01 週",
+      metrics: [
+        { value: "42", label: "確認商品" },
+        { value: "¥1,800", label: "中心価格帯" },
+        { value: "7", label: "注目ショップ" }
+      ],
+      summary: [
+        { title: "軽量カジュアルが強い", body: "普段着、スポーティ、制服アレンジの反応が高め。複数アバター対応の商品が比較対象に入りやすい。", accent: "teal" },
+        { title: "夏向け素材が増加", body: "透け感、ショート丈、サンダル同梱など季節要素のある商品が新着で目立つ。", accent: "coral" },
+        { title: "¥1,500から¥2,500が主戦場", body: "単品衣装はこの価格帯が中心。靴、髪飾り、色改変PSD付きは上振れしやすい。", accent: "violet" }
+      ],
+      productionMemo: "「夏の街歩き」「複数アバター対応」「色改変しやすい清潔なテクスチャ」を組み合わせると、今週の売れ筋に寄せやすい。",
+      products: [],
+      surgeReports: [],
+      archive: []
+    };
+
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        const panelName = tab.dataset.panel;
+        tabs.forEach((item) => item.setAttribute("aria-selected", String(item === tab)));
+        panels.forEach((panel) => panel.classList.toggle("active", panel.id === panelName));
+      });
+    });
+
+    const escapeText = (value) => String(value ?? "").replace(/[&<>"']/g, (char) => ({
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      "\"": "&quot;",
+      "'": "&#39;"
+    }[char]));
+
+    const renderTags = (tags = []) => tags.map((tag) => `<span class="tag">${escapeText(tag)}</span>`).join("");
+    const renderKpis = (kpis = []) => kpis.map((kpi, index) => `<span class="kpi ${index === 0 ? "hot" : ""}">${escapeText(kpi)}</span>`).join("");
+
+    function renderDashboard(data) {
+      document.querySelector("#week-label").textContent = data.weekLabel || data.reportDate || "";
+      document.querySelector("#production-memo").textContent = data.productionMemo || "";
+
+      document.querySelector("#metrics").innerHTML = (data.metrics || []).map((metric) => `
+        <div class="metric"><b>${escapeText(metric.value)}</b><span>${escapeText(metric.label)}</span></div>
+      `).join("");
+
+      document.querySelector("#summary-list").innerHTML = (data.summary || []).map((item) => `
+        <article class="insight accent-${escapeText(item.accent || "teal")}">
+          <strong>${escapeText(item.title)}</strong>
+          <p>${escapeText(item.body)}</p>
+        </article>
+      `).join("");
+
+      document.querySelector("#product-list").innerHTML = (data.products || []).map((product) => `
+        <article class="product">
+          <div class="thumb">
+            <img src="${escapeText(product.thumbnailUrl)}" alt="${escapeText(product.name)} の商品サムネイル">
+            ${product.signal ? `<span class="rank-badge">${escapeText(product.signal)}</span>` : ""}
+          </div>
+          <div>
+            <h3>${escapeText(product.name)}</h3>
+            <p class="shop">${escapeText(product.shop)}</p>
+            <div class="tags">${renderTags(product.tags)}</div>
+            <div class="product-footer">
+              <span class="price">${escapeText(product.price)}</span>
+              <a class="source-link" href="${escapeText(product.url)}" target="_blank" rel="noopener">商品を見る</a>
+            </div>
+          </div>
+        </article>
+      `).join("");
+
+      document.querySelector("#surge-list").innerHTML = (data.surgeReports || []).map((report) => `
+        <article class="surge-report">
+          <div class="surge-head">
+            <div class="thumb">
+              <img src="${escapeText(report.thumbnailUrl)}" alt="${escapeText(report.productName)} の商品サムネイル">
+            </div>
+            <div>
+              <h3>${escapeText(report.productName)}</h3>
+              <p class="shop">${escapeText(report.shop)}</p>
+              <div class="surge-kpi">${renderKpis(report.kpis)}</div>
+            </div>
+          </div>
+          <div class="report-body">
+            <h4>なぜ伸びたか</h4>
+            <p>${escapeText(report.why)}</p>
+            <h4>制作側の示唆</h4>
+            <p>${escapeText(report.takeaway)}</p>
+          </div>
+        </article>
+      `).join("");
+
+      document.querySelector("#archive-list").innerHTML = (data.archive || []).map((week) => `
+        <article class="week">
+          <div><strong>${escapeText(week.week)}</strong><span>${escapeText(week.summary)}</span></div>
+          <span class="score-pill">${escapeText(week.status)}</span>
+        </article>
+      `).join("");
+    }
+
+    async function loadDashboard() {
+      try {
+        const response = await fetch("booth-3d-data.json", { cache: "no-store" });
+        if (!response.ok) throw new Error("data load failed");
+        renderDashboard(await response.json());
+      } catch {
+        renderDashboard(fallbackData);
+      }
+    }
+
+    loadDashboard();
+  </script>
+</body>
+</html>
