@@ -2,101 +2,250 @@
   "reportDate": "2026/06/01",
   "weekLabel": "2026/06/01 週",
   "metrics": [
-    { "value": "42", "label": "確認商品" },
-    { "value": "¥1,800", "label": "中心価格帯" },
-    { "value": "7", "label": "注目ショップ" }
+    { "value": "116", "label": "確認商品" },
+    { "value": "¥1,600", "label": "中心価格帯" },
+    { "value": "65", "label": "確認ショップ" }
   ],
   "summary": [
     {
-      "title": "軽量カジュアルが強い",
-      "body": "普段着、スポーティ、制服アレンジの反応が高め。複数アバター対応の商品が比較対象に入りやすい。",
+      "title": "多アバター対応が上位を占める",
+      "body": "BOOTHの3D衣装+VRChat検索とVRChat即売会カテゴリ上位では、16から26アバター対応の商品が目立つ。対応数の多さは比較時の強い訴求になっている。",
       "accent": "teal"
     },
     {
-      "title": "夏向け素材が増加",
-      "body": "透け感、ショート丈、サンダル同梱など季節要素のある商品が新着で目立つ。",
+      "title": "中心価格は¥1,600前後",
+      "body": "確認した116件では、低価格の小物/単品から高単価フルセットまで幅があるが、一覧上の中心価格は¥1,600前後。¥1,800から¥2,000帯の商品も厚い。",
       "accent": "coral"
     },
     {
-      "title": "¥1,500から¥2,500が主戦場",
-      "body": "単品衣装はこの価格帯が中心。靴、髪飾り、色改変PSD付きは上振れしやすい。",
+      "title": "セールと発売記念が目立つ",
+      "body": "50%OFF、SALE、発売記念などの文言が上位に入りやすい。初回流入を作るには、価格訴求とサムネイル上の分かりやすさが重要。",
       "accent": "violet"
     }
   ],
-  "productionMemo": "「夏の街歩き」「複数アバター対応」「色改変しやすい清潔なテクスチャ」を組み合わせると、今週の売れ筋に寄せやすい。",
+  "productionMemo": "初回調査では、多アバター対応、¥1,600から¥2,000帯、セール/発売記念の見せ方、サムネイルで全身シルエットが分かる構成が強い。次に作るなら、日常寄りのセットアップかイベント映えするバニー/メイド系を、複数アバター対応で出す方向が検討しやすい。",
   "products": [
     {
-      "name": "Urban Light Set",
-      "url": "#",
-      "shop": "Sample Atelier",
-      "price": "¥1,800",
-      "thumbnailUrl": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 240'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop stop-color='%2365b8b3'/%3E%3Cstop offset='1' stop-color='%23f0d56b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='240' height='240' fill='url(%23g)'/%3E%3Cpath d='M82 70h76l20 44-28 16v66H90v-66l-28-16z' fill='white' fill-opacity='.78'/%3E%3Cpath d='M96 70c8 18 40 18 48 0' fill='none' stroke='%23202124' stroke-opacity='.28' stroke-width='8'/%3E%3C/svg%3E",
-      "tags": ["複数対応", "普段着"],
-      "signal": "急上昇",
-      "favoriteCount": 128,
-      "favoriteDelta": 18,
-      "firstSeen": "2026/06/01"
+      "name": "Hoodie set(23アバター対応)",
+      "url": "https://booth.pm/ja/items/7065708",
+      "shop": "Noem",
+      "price": "¥ 1,700~",
+      "thumbnailUrl": "https://booth.pximg.net/c/300x300_a2_g5/e95a337c-686b-4252-97e8-94e654cdc840/i/7065708/34c88a80-5844-489e-85f7-70ccb423fe49_base_resized.jpg",
+      "tags": ["23アバター対応", "セットアップ", "検索上位"],
+      "signal": "検索2位",
+      "favoriteCount": null,
+      "favoriteDelta": null,
+      "firstSeen": "2026/06/01",
+      "source": "BOOTH 3D衣装+VRChat検索",
+      "sourceRank": 2
     },
     {
-      "name": "Summer Layer Dress",
-      "url": "#",
-      "shop": "Pixel Closet",
-      "price": "¥2,200",
-      "thumbnailUrl": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 240'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop stop-color='%23f08a6a'/%3E%3Cstop offset='1' stop-color='%23f7d9a8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='240' height='240' fill='url(%23g)'/%3E%3Ccircle cx='190' cy='48' r='28' fill='white' fill-opacity='.42'/%3E%3Cpath d='M76 78h88l14 40-26 12 10 66H78l10-66-26-12z' fill='white' fill-opacity='.8'/%3E%3Cpath d='M103 76h34l-6 34h-22z' fill='%23202124' fill-opacity='.16'/%3E%3C/svg%3E",
-      "tags": ["夏向け", "PSD付き"],
-      "signal": "新着強め",
-      "favoriteCount": 96,
-      "favoriteDelta": 12,
-      "firstSeen": "2026/06/01"
+      "name": "2025年第1弾『断罪バニー - Danzai Bunny -』",
+      "url": "https://booth.pm/ja/items/6633647",
+      "shop": "EXTENSION CLOTHING",
+      "price": "¥ 1,800~",
+      "thumbnailUrl": "https://booth.pximg.net/c/300x300_a2_g5/87b70515-e32e-4a2e-bf41-317cf2c2177c/i/6633647/6bddd09f-011d-4293-b279-e4f6688290ab_base_resized.jpg",
+      "tags": ["バニー", "イベント上位", "シリーズ展開"],
+      "signal": "イベント1位",
+      "favoriteCount": null,
+      "favoriteDelta": null,
+      "firstSeen": "2026/06/01",
+      "source": "BOOTH Festival VRChat Edition 3D衣装",
+      "sourceRank": 1
     },
     {
-      "name": "Clean Mode Jacket",
-      "url": "#",
-      "shop": "Mesh Note",
-      "price": "¥2,600",
-      "thumbnailUrl": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 240'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop stop-color='%237d74d6'/%3E%3Cstop offset='1' stop-color='%232e3544'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='240' height='240' fill='url(%23g)'/%3E%3Cpath d='M74 64h92l16 132H58z' fill='white' fill-opacity='.74'/%3E%3Cpath d='M98 64l22 58 22-58' fill='none' stroke='%23202124' stroke-opacity='.3' stroke-width='9'/%3E%3Cpath d='M78 116h84' stroke='%23202124' stroke-opacity='.2' stroke-width='10'/%3E%3C/svg%3E",
-      "tags": ["きれいめ", "ジャケット"],
-      "signal": "高単価",
-      "favoriteCount": 74,
-      "favoriteDelta": 5,
-      "firstSeen": "2026/05/25"
+      "name": "ShadowLily【17アバター対応】",
+      "url": "https://booth.pm/ja/items/6535704",
+      "shop": "KNIVES DESIGN",
+      "price": "¥ 2,000~",
+      "thumbnailUrl": "https://booth.pximg.net/c/300x300_a2_g5/22f99ab4-cb5f-491a-b1e9-0465fe6c6f3f/i/6535704/44ea1047-d445-4bc9-82bf-92fd8fd89cf6_base_resized.jpg",
+      "tags": ["17アバター対応", "黒系", "両カテゴリ上位"],
+      "signal": "重複上位",
+      "favoriteCount": null,
+      "favoriteDelta": null,
+      "firstSeen": "2026/06/01",
+      "source": "検索4位 / イベント7位",
+      "sourceRank": 4
     },
     {
-      "name": "Weekend Sport Mix",
-      "url": "#",
-      "shop": "Avatar Wardrobe",
-      "price": "¥1,600",
-      "thumbnailUrl": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 240'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop stop-color='%2361a06f'/%3E%3Cstop offset='1' stop-color='%23d9ece2'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='240' height='240' fill='url(%23g)'/%3E%3Cpath d='M82 72h76l18 44-28 18v62H92v-62l-28-18z' fill='white' fill-opacity='.78'/%3E%3Cpath d='M88 138h64' stroke='%23202124' stroke-opacity='.22' stroke-width='10' stroke-linecap='round'/%3E%3Cpath d='M98 196l-10 28M142 196l10 28' stroke='white' stroke-opacity='.78' stroke-width='13' stroke-linecap='round'/%3E%3C/svg%3E",
-      "tags": ["スポーティ", "靴同梱"],
-      "signal": "比較対象",
-      "favoriteCount": 61,
-      "favoriteDelta": 4,
-      "firstSeen": "2026/05/25"
+      "name": "Meira｜Lumina対応＆前面PBアップデート",
+      "url": "https://booth.pm/ja/items/6971758",
+      "shop": "cherry neru",
+      "price": "¥ 1,000~",
+      "thumbnailUrl": "https://booth.pximg.net/c/300x300_a2_g5/b1574cea-1837-4fdb-9654-27cc43c52f3a/i/6971758/937fbd23-98e2-49f8-b34b-a30b4679163b_base_resized.jpg",
+      "tags": ["18アバター対応", "50%OFF", "アップデート訴求"],
+      "signal": "セール強め",
+      "favoriteCount": null,
+      "favoriteDelta": null,
+      "firstSeen": "2026/06/01",
+      "source": "BOOTH Festival VRChat Edition 3D衣装",
+      "sourceRank": 6
+    },
+    {
+      "name": "Chill out wear",
+      "url": "https://booth.pm/ja/items/7160050",
+      "shop": "LAYON",
+      "price": "¥ 1,800~",
+      "thumbnailUrl": "https://booth.pximg.net/c/300x300_a2_g5/ebaa6de7-8ca7-4319-8a84-0e098ddaaa20/i/7160050/db587465-ab1f-433b-81a5-f8432f82984e_base_resized.jpg",
+      "tags": ["15アバター対応", "普段着", "ルームウェア"],
+      "signal": "普段着枠",
+      "favoriteCount": null,
+      "favoriteDelta": null,
+      "firstSeen": "2026/06/01",
+      "source": "BOOTH Festival VRChat Edition 3D衣装",
+      "sourceRank": 10
+    },
+    {
+      "name": "ATTITUDE : The Royal Bunny",
+      "url": "https://booth.pm/ja/items/7635325",
+      "shop": "Libero Boutique",
+      "price": "¥ 1,600~",
+      "thumbnailUrl": "https://booth.pximg.net/c/300x300_a2_g5/1eb81c23-307c-4d3f-aab7-7c4c2ffd03ba/i/7635325/2a95de6a-f5f5-4538-bdac-ad1e37b4318a_base_resized.jpg",
+      "tags": ["22アバター対応", "SALE", "バニー"],
+      "signal": "SALE上位",
+      "favoriteCount": null,
+      "favoriteDelta": null,
+      "firstSeen": "2026/06/01",
+      "source": "BOOTH Festival VRChat Edition 3D衣装",
+      "sourceRank": 8
+    },
+    {
+      "name": "Klorfi【16アバター対応】",
+      "url": "https://booth.pm/ja/items/7951821",
+      "shop": "MELTY:Ri",
+      "price": "¥ 1,400~",
+      "thumbnailUrl": "https://booth.pximg.net/c/300x300_a2_g5/f862b268-9c95-4f40-84c2-978a60d5dc67/i/7951821/30e10065-0ce4-495c-bda2-588f54759a81_base_resized.jpg",
+      "tags": ["16アバター対応", "MA対応", "PSD付き"],
+      "signal": "新しめ上位",
+      "favoriteCount": null,
+      "favoriteDelta": null,
+      "firstSeen": "2026/06/01",
+      "source": "BOOTH 3D衣装+VRChat検索",
+      "sourceRank": 12
+    },
+    {
+      "name": "DAY OFF [26Avatars] + Misaki [Update]",
+      "url": "https://booth.pm/ja/items/7638986",
+      "shop": "DARLING CLOTHING",
+      "price": "¥ 500~",
+      "thumbnailUrl": "https://booth.pximg.net/c/300x300_a2_g5/3c2a2c11-4119-42d8-9079-30df136a5405/i/7638986/d09c5b7b-2841-43af-b8e3-c0d0c331c908_base_resized.jpg",
+      "tags": ["26アバター対応", "Update", "低価格入口"],
+      "signal": "対応数最多級",
+      "favoriteCount": null,
+      "favoriteDelta": null,
+      "firstSeen": "2026/06/01",
+      "source": "BOOTH Festival VRChat Edition 3D衣装",
+      "sourceRank": 13
+    },
+    {
+      "name": "UrbisVortex",
+      "url": "https://booth.pm/ja/items/5374094",
+      "shop": "HB_shop",
+      "price": "¥ 1,400~",
+      "thumbnailUrl": "https://booth.pximg.net/c/300x300_a2_g5/406f1641-9bb2-410e-bc9a-7269635a4e63/i/5374094/7b7d1a38-1c67-4dd1-a6db-9fe6ef684689_base_resized.jpg",
+      "tags": ["13アバター対応", "低め価格", "両カテゴリ掲載"],
+      "signal": "安定上位",
+      "favoriteCount": null,
+      "favoriteDelta": null,
+      "firstSeen": "2026/06/01",
+      "source": "検索5位 / イベント17位",
+      "sourceRank": 5
+    },
+    {
+      "name": "オリジナル3D衣装「メイガスバニー」",
+      "url": "https://booth.pm/ja/items/4911160",
+      "shop": "ROKO SHOP",
+      "price": "¥ 2,800",
+      "thumbnailUrl": "https://booth.pximg.net/c/300x300_a2_g5/e3843aaf-9232-4a4c-9d6e-e0a09646f417/i/4911160/2ba62809-55be-4ed5-99a6-4f919f31b5ff_base_resized.jpg",
+      "tags": ["バニー", "高単価", "検索上位"],
+      "signal": "高単価上位",
+      "favoriteCount": null,
+      "favoriteDelta": null,
+      "firstSeen": "2026/06/01",
+      "source": "BOOTH 3D衣装+VRChat検索",
+      "sourceRank": 3
+    },
+    {
+      "name": "お給仕メイド＆オリジナルシャンパンギミック",
+      "url": "https://booth.pm/ja/items/6782330",
+      "shop": "C.C.MATILDA",
+      "price": "¥ 2,000~",
+      "thumbnailUrl": "https://booth.pximg.net/c/300x300_a2_g5/2c32971b-6bde-44dd-ad58-a31eceb2c863/i/6782330/78b9def5-15be-4ad6-938a-9a507a463d79_base_resized.jpg",
+      "tags": ["16アバター対応", "メイド", "ギミック付き"],
+      "signal": "ギミック訴求",
+      "favoriteCount": null,
+      "favoriteDelta": null,
+      "firstSeen": "2026/06/01",
+      "source": "BOOTH 3D衣装+VRChat検索",
+      "sourceRank": 6
+    },
+    {
+      "name": "Midnight School",
+      "url": "https://booth.pm/ja/items/5683588",
+      "shop": "OATH",
+      "price": "¥ 2,300~",
+      "thumbnailUrl": "https://booth.pximg.net/c/300x300_a2_g5/b59839c2-973d-40cb-b7c3-d3f981c699b7/i/5683588/ee9f1977-1752-4c1a-acdf-c5ced19d9ea1_base_resized.jpg",
+      "tags": ["複数アバター対応", "制服系", "検索上位"],
+      "signal": "定番系",
+      "favoriteCount": null,
+      "favoriteDelta": null,
+      "firstSeen": "2026/06/01",
+      "source": "BOOTH 3D衣装+VRChat検索",
+      "sourceRank": 10
     }
   ],
   "surgeReports": [
     {
-      "productName": "Urban Light Set",
-      "shop": "Sample Atelier",
-      "price": "¥1,800",
-      "thumbnailUrl": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 240'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop stop-color='%2365b8b3'/%3E%3Cstop offset='1' stop-color='%23f0d56b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='240' height='240' fill='url(%23g)'/%3E%3Cpath d='M82 70h76l20 44-28 16v66H90v-66l-28-16z' fill='white' fill-opacity='.78'/%3E%3Cpath d='M96 70c8 18 40 18 48 0' fill='none' stroke='%23202124' stroke-opacity='.28' stroke-width='8'/%3E%3C/svg%3E",
-      "kpis": ["アクセス推定 +64%", "お気に入り +18%", "¥1,800"],
-      "why": "サムネイルで衣装の全体像がすぐ分かり、対応アバター数と価格のバランスも良い。普段使いできる見た目なので比較対象に残りやすい。",
-      "takeaway": "同じ方向で作るなら、派手さより「日常服として使いやすい」「色改変しやすい」「靴や小物込み」を前面に出すとよさそう。"
+      "productName": "Hoodie set(23アバター対応)",
+      "shop": "Noem",
+      "price": "¥ 1,700~",
+      "thumbnailUrl": "https://booth.pximg.net/c/300x300_a2_g5/e95a337c-686b-4252-97e8-94e654cdc840/i/7065708/34c88a80-5844-489e-85f7-70ccb423fe49_base_resized.jpg",
+      "kpis": ["検索2位", "23アバター対応", "¥1,700~"],
+      "why": "3D衣装+VRChat検索で2位に入り、23アバター対応という対応数の広さが強い。商品説明でもシンプル+アクセントのセットアップと打ち出しており、日常使いしやすい方向で比較候補に残りやすい。",
+      "takeaway": "普段着系を作る場合は、サムネイルで全身のシルエットを見せつつ、対応アバター数をタイトル前半に入れると一覧で強い。価格は単品入口を用意し、Fullsetは対応数に応じて上げる設計が参考になる。"
     },
     {
-      "productName": "Summer Layer Dress",
-      "shop": "Pixel Closet",
-      "price": "¥2,200",
-      "thumbnailUrl": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 240'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop stop-color='%23f08a6a'/%3E%3Cstop offset='1' stop-color='%23f7d9a8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='240' height='240' fill='url(%23g)'/%3E%3Ccircle cx='190' cy='48' r='28' fill='white' fill-opacity='.42'/%3E%3Cpath d='M76 78h88l14 40-26 12 10 66H78l10-66-26-12z' fill='white' fill-opacity='.8'/%3E%3Cpath d='M103 76h34l-6 34h-22z' fill='%23202124' fill-opacity='.16'/%3E%3C/svg%3E",
-      "kpis": ["新着流入 +41%", "検索露出 高", "¥2,200"],
-      "why": "季節感が明確で、一覧で見たときに色味が目立つ。夏向けの需要が出始める時期と合っている可能性が高い。",
-      "takeaway": "季節物は初動の見せ方が重要。商品名、サムネイル、説明文の最初に季節用途を入れるとクリックされやすい。"
+      "productName": "Meira｜Lumina対応＆前面PBアップデート",
+      "shop": "cherry neru",
+      "price": "¥ 1,000~",
+      "thumbnailUrl": "https://booth.pximg.net/c/300x300_a2_g5/b1574cea-1837-4fdb-9654-27cc43c52f3a/i/6971758/937fbd23-98e2-49f8-b34b-a30b4679163b_base_resized.jpg",
+      "kpis": ["イベント6位", "18アバター対応", "50%OFF"],
+      "why": "イベントカテゴリ上位で、18アバター対応、50%OFF、アップデート訴求がタイトルだけで伝わる。説明文にもセール期間と価格差が明記されており、初回流入を取りにいく設計が分かりやすい。",
+      "takeaway": "発売記念やアップデートを使う場合は、期間・通常価格・セール価格を明確に書くとクリック後の納得感が出る。タイトル内の割引率と対応数は、一覧上で強いフックになる。"
+    },
+    {
+      "productName": "Chill out wear",
+      "shop": "LAYON",
+      "price": "¥ 1,800~",
+      "thumbnailUrl": "https://booth.pximg.net/c/300x300_a2_g5/ebaa6de7-8ca7-4319-8a84-0e098ddaaa20/i/7160050/db587465-ab1f-433b-81a5-f8432f82984e_base_resized.jpg",
+      "kpis": ["イベント10位", "15アバター対応", "普段着/ルームウェア"],
+      "why": "森羅、しなの、愛莉、マヌカなど主要アバター名を商品名に含め、普段着とルームウェアの両方で使える用途を訴求している。イベント上位の中では、過度に装飾せず日常寄りで目立つ枠。",
+      "takeaway": "日常服は派手なテーマより、使える場面の広さが重要。シャツ、トップス、ボトムの組み合わせ自由度を説明に入れると、購入後の使い道を想像しやすくなる。"
+    },
+    {
+      "productName": "ATTITUDE : The Royal Bunny",
+      "shop": "Libero Boutique",
+      "price": "¥ 1,600~",
+      "thumbnailUrl": "https://booth.pximg.net/c/300x300_a2_g5/1eb81c23-307c-4d3f-aab7-7c4c2ffd03ba/i/7635325/2a95de6a-f5f5-4538-bdac-ad1e37b4318a_base_resized.jpg",
+      "kpis": ["イベント8位", "22アバター対応", "SALE"],
+      "why": "22アバター対応、SALE、ロイヤルバニーという強いテーマが一覧で伝わる。商品説明では高級感、ジャケット、アクセサリー、色変更による印象差を訴求しており、イベント用途と日常改変の両方を狙っている。",
+      "takeaway": "イベント映えする衣装は、単にテーマ名を出すだけでなく、外せるパーツや色変更の幅を示すと改変需要にも届く。高級感を出す場合は、金属・グリッター・アクセサリーなど素材表現の見せ方が重要。"
     }
   ],
   "archive": [
-    { "week": "2026/06/01 週", "summary": "夏向けと普段着セットが上昇", "status": "最新" },
-    { "week": "2026/05/25 週", "summary": "スポーティ衣装、制服アレンジが安定", "status": "比較用" },
-    { "week": "2026/05/18 週", "summary": "ジャケット系と靴同梱商品の単価が高め", "status": "比較用" }
+    { "week": "2026/06/01 週", "summary": "初回実データ反映。116件確認、多アバター対応とセール訴求が強い。", "status": "最新" },
+    { "week": "次回以降", "summary": "保存済みデータとの差分でお気に入り増加、掲載順位変化、継続上位を確認する。", "status": "予定" }
+  ],
+  "sources": [
+    {
+      "label": "BOOTH 3D衣装+VRChat検索",
+      "url": "https://booth.pm/ja/search/3D%E8%A1%A3%E8%A3%85?tags%5B%5D=VRChat",
+      "checkedItems": 60
+    },
+    {
+      "label": "BOOTH Festival VRChat Edition 3D衣装",
+      "url": "https://booth.pm/ja/events/bf-vrchat/browse/3D%E8%A1%A3%E8%A3%85?tags%5B%5D=%E6%84%9B%E8%8E%89",
+      "checkedItems": 60
+    }
   ]
 }
